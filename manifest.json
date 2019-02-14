@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "version": "1.0",
+    "name": "Custom Google Background",
+    "description": "This exension allow us set a custom background for pages",
+    "icons": {
+        "128": "icon.png"
+    },
+    "page_action": {
+        "default_popup" : "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.google.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "permissions" : [
+        "pageAction",
+        "storage",
+        "tabs"
+    ],
+    "background" : {
+        "scripts" : ["background.js"]
+    }
+}
